@@ -6,6 +6,7 @@ public class InstanceMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     [SerializeField] private float speed;
+    [SerializeField] private int health;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,10 +27,20 @@ public class InstanceMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             GameManager.Instance.StopSpawn();
             speed = 0f;
+        }
+
+        if (collision.gameObject.CompareTag("bullet"))
+        {
+            health -= 1;
+
+            if (health == 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }
