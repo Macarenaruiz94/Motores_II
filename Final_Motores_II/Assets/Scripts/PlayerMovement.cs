@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Attack()
     {
+        animator.SetBool("isDmg", true);
         GameObject bullet = Instantiate(bulletPrefab);
         bullet.transform.position = LaunchOffset.transform.position;
     }
