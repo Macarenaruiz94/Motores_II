@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        Time.timeScale = 1f;
         AudioListener.pause = false;
     }
 
@@ -25,8 +24,6 @@ public class PlayerMovement : MonoBehaviour
                 Jump();
             }
         }
-
-        //animator.SetBool("isGrounded", isGrounded);
     }
 
     void Jump()
@@ -45,8 +42,6 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("enemy"))
         {
             animator.SetTrigger("Death");
-            //GameManager.Instance.ShowGameOver();
-            Time.timeScale = 0f;
             AudioListener.pause = true;
 
         }
