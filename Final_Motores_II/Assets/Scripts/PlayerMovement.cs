@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
     bool isGrounded;
     [SerializeField] private float jumpForce;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject LaunchOffset;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,6 +27,20 @@ public class PlayerMovement : MonoBehaviour
                 Jump();
             }
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (isGrounded)
+            {
+                Attack();
+            }
+        }
+    }
+
+    private void Attack()
+    {
+        GameObject bullet = Instantiate(bulletPrefab);
+        bullet.transform.position = LaunchOffset.transform.position;
     }
 
     void Jump()
