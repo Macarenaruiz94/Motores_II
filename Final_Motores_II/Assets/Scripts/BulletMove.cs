@@ -22,5 +22,10 @@ public class BulletMove : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        if (collision.gameObject.CompareTag("bulletDeathZone"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
