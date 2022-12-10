@@ -9,6 +9,8 @@ TagManager:
   - enemy
   - bullet
   - bulletDeathZone
+  - water
+  - item
   layers:
   - Default
   - TransparentFX
