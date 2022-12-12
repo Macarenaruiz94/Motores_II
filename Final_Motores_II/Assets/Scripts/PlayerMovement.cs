@@ -63,5 +63,17 @@ public class PlayerMovement : MonoBehaviour
             AudioListener.pause = true;
 
         }
+
+        if (collision.gameObject.CompareTag("water"))
+        {
+            animator.SetTrigger("Death");
+            AudioListener.pause = true;
+
+        }
+    }
+
+    public Vector3 GetPosition()
+    {
+        return transform.position;
     }
 }
