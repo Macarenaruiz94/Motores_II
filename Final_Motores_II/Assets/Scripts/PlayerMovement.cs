@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
     bool isGrounded;
     [SerializeField] private float jumpForce;
+    [SerializeField] private float speed;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private GameObject LaunchOffset;
     void Start()
@@ -20,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        transform.position += transform.right * speed * Time.deltaTime;
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (isGrounded)

@@ -736,6 +736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 600
+  speed: 3
   bulletPrefab: {fileID: 983550077795454278, guid: acdaf792fec7fe64c8534e2a5823bc15, type: 3}
   LaunchOffset: {fileID: 1439153813}
 --- !u!1 &1106324437
