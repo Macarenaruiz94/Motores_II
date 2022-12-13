@@ -8,7 +8,7 @@ public class SpawnLevels : MonoBehaviour
     [SerializeField] private List<Transform> levelParts;
     [SerializeField] private PlayerMovement player;
 
-    private const float playerDistance = 200f;
+    private const float playerDistance = 2f;
     private Vector3 lastEndPosition;
 
     private void Awake()

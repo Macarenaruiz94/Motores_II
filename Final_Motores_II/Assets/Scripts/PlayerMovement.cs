@@ -63,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("enemy"))
         {
             animator.SetTrigger("Death");
+            speed = 0f;
             AudioListener.pause = true;
 
         }
@@ -70,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("water"))
         {
             animator.SetTrigger("Death");
+            speed = 0f;
             AudioListener.pause = true;
 
         }
